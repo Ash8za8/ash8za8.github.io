@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aston Web Services</title>
+<title>Aston Web Creation Services</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -14,6 +14,10 @@
     padding:0;
     box-sizing:border-box;
     font-family:'Inter',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
@@ -28,25 +32,16 @@ body{
     margin:auto;
 }
 
-section{
-    padding:90px 0;
-}
-
-h2{
-    text-align:center;
-    margin-bottom:50px;
-    font-size:2.5rem;
-}
-
 nav{
     position:fixed;
     width:100%;
-    background:rgba(15,23,42,.95);
-    backdrop-filter:blur(10px);
+    top:0;
     z-index:1000;
+    background:rgba(15,23,42,.9);
+    backdrop-filter:blur(10px);
 }
 
-.navbar{
+.nav-container{
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -55,7 +50,7 @@ nav{
 
 .logo{
     color:white;
-    font-size:1.4rem;
+    font-size:24px;
     font-weight:700;
 }
 
@@ -72,36 +67,71 @@ nav a{
 
 .hero{
     min-height:100vh;
-    background:linear-gradient(135deg,#0f172a,#2563eb);
-    color:white;
     display:flex;
     align-items:center;
+    background:
+    linear-gradient(rgba(15,23,42,.8),rgba(15,23,42,.8)),
+    url('https://images.unsplash.com/photo-1498050108023-c5249f4df085');
+    background-size:cover;
+    background-position:center;
+    color:white;
     text-align:center;
 }
 
+.hero-content{
+    width:100%;
+}
+
 .hero h1{
-    font-size:4rem;
+    font-size:60px;
     margin-bottom:20px;
 }
 
 .hero p{
+    font-size:20px;
     max-width:700px;
     margin:auto;
-    font-size:1.2rem;
+}
+
+.hero-buttons{
+    margin-top:40px;
 }
 
 .btn{
     display:inline-block;
-    margin-top:30px;
     padding:14px 28px;
-    background:white;
-    color:#2563eb;
-    text-decoration:none;
     border-radius:12px;
+    text-decoration:none;
     font-weight:600;
+    margin:10px;
+    transition:.3s;
 }
 
-.grid{
+.btn-primary{
+    background:#2563eb;
+    color:white;
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+}
+
+.btn-secondary{
+    border:2px solid white;
+    color:white;
+}
+
+section{
+    padding:100px 0;
+}
+
+.section-title{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:60px;
+}
+
+.features{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:25px;
@@ -115,44 +145,89 @@ nav a{
 }
 
 .card h3{
-    margin-bottom:10px;
+    margin-bottom:15px;
+}
+
+.steps{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
 }
 
 .step{
+    background:white;
+    padding:30px;
+    border-radius:18px;
     text-align:center;
 }
 
-.number{
+.step-number{
     width:60px;
     height:60px;
     background:#2563eb;
     color:white;
     border-radius:50%;
     display:flex;
-    justify-content:center;
     align-items:center;
-    margin:auto auto 15px;
-    font-size:1.4rem;
-    font-weight:700;
+    justify-content:center;
+    margin:auto;
+    margin-bottom:20px;
+    font-size:22px;
+}
+
+.pricing{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
 }
 
 .price-card{
+    background:white;
+    padding:35px;
     text-align:center;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
 
 .price{
-    font-size:2.5rem;
+    font-size:42px;
     color:#2563eb;
     font-weight:700;
     margin:15px 0;
 }
 
 .badge{
-    display:inline-block;
     background:#dcfce7;
     color:#166534;
-    padding:8px 14px;
+    padding:8px 15px;
     border-radius:30px;
+    display:inline-block;
+    margin-top:15px;
+}
+
+.portfolio{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.portfolio-item{
+    background:white;
+    padding:30px;
+    border-radius:18px;
+    text-align:center;
+}
+
+.testimonials{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.testimonial{
+    background:white;
+    padding:30px;
+    border-radius:18px;
 }
 
 .faq-item{
@@ -160,41 +235,48 @@ nav a{
     padding:25px;
     border-radius:18px;
     margin-bottom:20px;
-    box-shadow:0 5px 15px rgba(0,0,0,.05);
 }
 
 .contact{
     background:#0f172a;
     color:white;
     border-radius:25px;
-    padding:50px;
+    padding:60px;
     text-align:center;
+}
+
+.contact h2{
+    margin-bottom:20px;
 }
 
 .contact p{
     margin:10px 0;
-    font-size:1.1rem;
+    font-size:18px;
 }
 
 footer{
     background:#020617;
     color:white;
     text-align:center;
-    padding:20px;
+    padding:25px;
 }
 
 @media(max-width:768px){
 
 .hero h1{
-    font-size:2.5rem;
+    font-size:40px;
+}
+
+.section-title{
+    font-size:30px;
 }
 
 nav ul{
     display:none;
 }
 
-h2{
-    font-size:2rem;
+.contact{
+    padding:35px;
 }
 
 }
@@ -204,142 +286,133 @@ h2{
 <body>
 
 <nav>
-<div class="container navbar">
+<div class="container nav-container">
 <div class="logo">Aston Web Services</div>
-
 <ul>
 <li><a href="#features">Features</a></li>
 <li><a href="#pricing">Pricing</a></li>
-<li><a href="#faq">FAQ</a></li>
+<li><a href="#portfolio">Portfolio</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
-
 </div>
 </nav>
 
 <section class="hero">
-
-<div class="container">
-
+<div class="container hero-content">
 <h1>Professional Websites For Companies</h1>
 
 <p>
-Modern, responsive websites designed for businesses.
-Maintenance is included with every plan.
-Simply provide your company details and we'll handle the rest.
+Modern websites built for businesses. Fast, responsive,
+mobile-friendly and maintained throughout your subscription.
 </p>
 
-<a href="#pricing" class="btn">View Pricing</a>
-
+<div class="hero-buttons">
+<a href="#pricing" class="btn btn-primary">View Pricing</a>
+<a href="#contact" class="btn btn-secondary">Contact Us</a>
 </div>
-
+</div>
 </section>
 
 <section id="features">
-
 <div class="container">
 
-<h2>Why Choose Us?</h2>
+<h2 class="section-title">Why Choose Us?</h2>
 
-<div class="grid">
+<div class="features">
 
 <div class="card">
 <h3>Modern Design</h3>
-<p>Clean and professional websites built for today's businesses.</p>
+<p>Professional layouts that look great on all devices.</p>
 </div>
 
 <div class="card">
-<h3>Mobile Friendly</h3>
-<p>Your website looks great on phones, tablets and computers.</p>
+<h3>Fast Delivery</h3>
+<p>Your website can be ready within a few days.</p>
 </div>
 
 <div class="card">
 <h3>Maintenance Included</h3>
-<p>Updates and support included throughout your subscription.</p>
+<p>Updates and support included in every package.</p>
 </div>
 
 <div class="card">
-<h3>Fast Setup</h3>
-<p>Quick turnaround with a simple process.</p>
+<h3>Easy Process</h3>
+<p>Just send your business details and we handle the rest.</p>
 </div>
 
 </div>
 
 </div>
-
 </section>
 
 <section>
-
 <div class="container">
 
-<h2>How It Works</h2>
+<h2 class="section-title">How It Works</h2>
 
-<div class="grid">
+<div class="steps">
 
-<div class="card step">
-<div class="number">1</div>
+<div class="step">
+<div class="step-number">1</div>
 <h3>Send Details</h3>
-<p>Provide company information and requirements.</p>
+<p>Provide your company information and requirements.</p>
 </div>
 
-<div class="card step">
-<div class="number">2</div>
-<h3>Build</h3>
-<p>We design and create your website.</p>
+<div class="step">
+<div class="step-number">2</div>
+<h3>Design</h3>
+<p>We create your professional website.</p>
 </div>
 
-<div class="card step">
-<div class="number">3</div>
+<div class="step">
+<div class="step-number">3</div>
 <h3>Review</h3>
-<p>You review and approve the final website.</p>
+<p>You approve the design and content.</p>
 </div>
 
-<div class="card step">
-<div class="number">4</div>
+<div class="step">
+<div class="step-number">4</div>
 <h3>Launch</h3>
-<p>Your website goes live with maintenance included.</p>
+<p>Your website goes live and maintenance begins.</p>
 </div>
 
 </div>
 
 </div>
-
 </section>
 
 <section id="pricing">
-
 <div class="container">
 
-<h2>Pricing Plans</h2>
+<h2 class="section-title">Pricing Plans</h2>
 
-<div class="grid">
+<div class="pricing">
 
-<div class="card price-card">
+<div class="price-card">
 <h3>1 Year</h3>
 <div class="price">12 OMR</div>
 <div class="badge">Maintenance Included</div>
 </div>
 
-<div class="card price-card">
+<div class="price-card">
 <h3>2 Years</h3>
 <div class="price">20 OMR</div>
 <div class="badge">Maintenance Included</div>
 </div>
 
-<div class="card price-card">
+<div class="price-card">
 <h3>3 Years</h3>
 <div class="price">30 OMR</div>
 <div class="badge">Maintenance Included</div>
 </div>
 
-<div class="card price-card">
+<div class="price-card">
 <h3>4 Years</h3>
 <div class="price">40 OMR</div>
 <div class="badge">Maintenance Included</div>
 </div>
 
-<div class="card price-card">
+<div class="price-card">
 <h3>5 Years</h3>
 <div class="price">50 OMR</div>
 <div class="badge">Maintenance Included</div>
@@ -348,23 +421,76 @@ Simply provide your company details and we'll handle the rest.
 </div>
 
 </div>
-
 </section>
 
-<section id="faq">
-
+<section id="portfolio">
 <div class="container">
 
-<h2>Frequently Asked Questions</h2>
+<h2 class="section-title">Portfolio Examples</h2>
+
+<div class="portfolio">
+
+<div class="portfolio-item">
+<h3>Restaurant Website</h3>
+</div>
+
+<div class="portfolio-item">
+<h3>Car Rental Website</h3>
+</div>
+
+<div class="portfolio-item">
+<h3>School Website</h3>
+</div>
+
+<div class="portfolio-item">
+<h3>Business Website</h3>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2 class="section-title">Testimonials</h2>
+
+<div class="testimonials">
+
+<div class="testimonial">
+★★★★★
+<p>Professional and fast service.</p>
+</div>
+
+<div class="testimonial">
+★★★★★
+<p>Great support and excellent value.</p>
+</div>
+
+<div class="testimonial">
+★★★★★
+<p>Our business looks much more professional online.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2 class="section-title">Frequently Asked Questions</h2>
 
 <div class="faq-item">
 <h3>How long does setup take?</h3>
-<p>Most websites are ready within 1–3 days.</p>
+<p>Usually 1–3 days.</p>
 </div>
 
 <div class="faq-item">
 <h3>Is maintenance included?</h3>
-<p>Yes, every package includes maintenance.</p>
+<p>Yes, every subscription includes maintenance.</p>
 </div>
 
 <div class="faq-item">
@@ -373,11 +499,9 @@ Simply provide your company details and we'll handle the rest.
 </div>
 
 </div>
-
 </section>
 
 <section id="contact">
-
 <div class="container">
 
 <div class="contact">
@@ -389,18 +513,17 @@ Simply provide your company details and we'll handle the rest.
 <p>✉️ dsouzaaston94@gmail.com</p>
 
 <p>
-Ready to get your business online?
-Contact us today.
+Ready to build your company's online presence?
+Get in touch today.
 </p>
 
 </div>
 
 </div>
-
 </section>
 
 <footer>
-© 2026 Aston Web Services
+© 2026 Aston Web Creation Services
 </footer>
 
 </body>
