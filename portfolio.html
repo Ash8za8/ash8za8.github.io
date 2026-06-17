@@ -1,3 +1,74 @@
+<!DOCTYPE html>
 <html>
-  
+<head>
+<title>John Smith Portfolio</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f8fafc;
+}
+
+.hero{
+padding:100px 10%;
+text-align:center;
+background:white;
+}
+
+.hero img{
+width:180px;
+height:180px;
+border-radius:50%;
+object-fit:cover;
+}
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+padding:60px;
+}
+
+.project{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+<img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43?w=600">
+
+<h1>John Smith</h1>
+
+<p>Web Designer & Developer</p>
+
+</section>
+
+<section class="projects">
+
+<div class="project">
+<h3>Restaurant Website</h3>
+<p>Modern responsive design.</p>
+</div>
+
+<div class="project">
+<h3>E-Commerce Store</h3>
+<p>Shopify-inspired online shop.</p>
+</div>
+
+<div class="project">
+<h3>Corporate Website</h3>
+<p>Professional business solution.</p>
+</div>
+
+</section>
+
+</body>
 </html>
